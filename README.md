@@ -35,3 +35,36 @@ The JSON file should contain the following structure:
 - **Testing:** Use `pytest` to implement unit tests for each function.
 - **File Handling:** The extracted data should be saved to a JSON file named `extracted_wikipedia_data.json`.
 
+
+
+### Task 2: Collecting Weather Data Using Open-Meteo API
+
+**Objective:**  
+Learn how to collect weather data using the Open-Meteo API and save the extracted data into a JSON file.
+
+### Task Description:
+
+1. **Fetch Weather Data:**
+   - Write a Python script that sends a request to the Open-Meteo API using the provided endpoint:
+     - URL: `https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&daily=temperature_2m_max&timezone=Asia/Tokyo`
+   - This URL fetches the maximum temperature forecast for Tokyo (latitude 35.6895, longitude 139.6917).
+
+2. **Extract the Maximum Temperature:**
+   - Extract the `temperature_2m_max` value from the JSON response. This represents the maximum temperature for the next day in Tokyo.
+
+3. **Save the Extracted Data:**
+   - Save the extracted temperature data into a JSON file named `tokyo_weather.json`.
+
+### JSON Output Example:
+
+The JSON file might look like this:
+
+```json
+{
+    "date": "2024-08-18",
+    "max_temperature": 32.5
+}
+```
+
+
+
