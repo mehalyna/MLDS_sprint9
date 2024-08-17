@@ -39,7 +39,6 @@ The JSON file should contain the following structure:
 
 ## Task 2: Collecting Weather Data Using Open-Meteo API
 
-**Objective:**  
 Learn how to collect weather data using the Open-Meteo API and save the extracted data into a JSON file.
 
 ### Task Description:
@@ -68,7 +67,6 @@ The JSON file might look like this:
 
 ## Task 3: Advanced Parsing, Analyzing, and Reporting on Complex Weather Data
 
-**Objective:**  
 Create a Python script that loads, parses, and analyzes complex weather data stored in a JSON file. The script should perform multiple analyses over several days and generate detailed reports summarizing the findings.
 
 ### Task Description:
