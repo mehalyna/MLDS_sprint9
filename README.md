@@ -37,7 +37,7 @@ The JSON file should contain the following structure:
 
 
 
-### Task 2: Collecting Weather Data Using Open-Meteo API
+## Task 2: Collecting Weather Data Using Open-Meteo API
 
 **Objective:**  
 Learn how to collect weather data using the Open-Meteo API and save the extracted data into a JSON file.
