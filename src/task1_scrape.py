@@ -1,19 +1,54 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 
-def scrape_webpage(url):
+def fetch_wikipedia_page(url):
     response = requests.get(url)
     response.raise_for_status()
+    return response.text
 
-    soup = BeautifulSoup(response.text, 'html.parser')
-    items = soup.find_all('h2')  # Modify this according to the target webpage
 
-    return [item.get_text(strip=True) for item in items]
+def extract_title(soup):
+    # Extract the title of the page
+    title = soup.find('h1', {'id': 'firstHeading'}).get_text(strip=True)
+    return title
+
+
+def extract_first_sentence(soup):
+    # Extract the first sentence of the first paragraph
+    first_paragraph = soup.find('p').get_text(strip=True)
+    first_sentence = first_paragraph.split('.')[0] + '.'
+    return first_sentence
+
+
+def save_to_json(data, filename):
+    # Save the data to a JSON file
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=4)
 
 
 if __name__ == "__main__":
-    url = 'https://en.wikipedia.org/wiki/Web_scraping'  # Replace with the actual URL
-    items = scrape_webpage(url)
-    for item in items:
-        print(item)
+    url = "https://en.wikipedia.org/wiki/Web_scraping"
+    page_content = fetch_wikipedia_page(url)
+    soup = BeautifulSoup(page_content, 'html.parser')
+
+    # Extract the title of the page
+    title = extract_title(soup)
+
+    # Extract the first sentence of the first paragraph
+    first_sentence = extract_first_sentence(soup)
+
+    # Combine the extracted data
+    extracted_data = {
+        "title": title,
+        "first_sentence": first_sentence
+    }
+
+    # Print the extracted data
+    print("Extracted Data:", extracted_data)
+
+    # Save the data to a JSON file
+    save_to_json(extracted_data, 'extracted_wikipedia_data.json')
+
+    print("Data successfully saved to extracted_wikipedia_data.json")
