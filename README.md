@@ -131,6 +131,57 @@ Most humid day: 2024-08-20 with a humidity level of True%
 Rainiest day: 2024-08-19 with True mm of precipitation
 ```
 
+## Task 4: Summarizing and Exporting Weather Data to CSV
+
+Create a Python script that loads, summarizes, and exports complex weather data stored in a JSON file to a CSV file. The script should be able to handle both file paths and file-like objects for the CSV output.
+
+### Task Description:
+
+1. **Load and Parse JSON Data:**
+   - Write a Python script that loads weather data from a JSON file named `tokyo_weather_complex.json`.
+
+2. **Summarize Weather Data:**
+   - Implement a function that calculates key metrics across multiple days of weather data. The summary should include:
+     - The average maximum and minimum temperatures over the period.
+     - The total precipitation over the period.
+     - The average wind speed and humidity over the period.
+     - The number of hot days (e.g., days where the temperature exceeded 30°C).
+     - The number of windy days (e.g., days where the wind speed exceeded 15 km/h).
+     - The number of rainy days.
+
+3. **Export the Summary to a CSV File:**
+   - Create a function that exports the summarized data to a CSV file. The function should:
+     - Accept either a string (file path) or a file-like object (e.g., `StringIO`) as the destination for the CSV output.
+     - Write the daily weather data, including additional analyzed metrics (e.g., whether it was a hot day, windy day, or rainy day).
+     - Ensure the CSV file includes appropriate headers.
+
+### Example Implementation:
+
+Here’s a breakdown of the key functions:
+
+1. **load_json:**
+   - Loads the JSON data from the specified file.
+
+2. **summarize_weather_data:**
+   - Summarizes key metrics across all days, such as average temperatures, total precipitation, average wind speed, and counts of hot, windy, and rainy days.
+
+3. **export_to_csv:**
+   - Exports the summarized weather data to a CSV file. This function should handle both string filenames and file-like objects.
+
+### Example CSV Output:
+
+The CSV file might look like this:
+
+```csv
+Date,Max Temperature,Min Temperature,Precipitation,Wind Speed,Humidity,Weather Description,Is Hot Day,Is Windy Day,Is Rainy Day
+2024-08-18,32.5,22.5,0.0,15.5,65,Clear sky,True,True,False
+2024-08-19,30.0,21.0,5.0,10.0,70,Light rain,False,False,True
+2024-08-20,28.0,20.0,10.0,8.0,80,Moderate rain,False,False,True
+2024-08-21,33.0,24.0,0.0,20.0,60,Sunny,True,True,False
+```
+
+
+
 
 
 
