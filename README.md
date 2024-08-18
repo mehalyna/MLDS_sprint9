@@ -180,6 +180,80 @@ Date,Max Temperature,Min Temperature,Precipitation,Wind Speed,Humidity,Weather D
 2024-08-21,33.0,24.0,0.0,20.0,60,Sunny,True,True,False
 ```
 
+## Task 5: Parsing Weather Data from an XML File
+
+Create a Python script to parse weather data from an XML file, extract key metrics, and store them in a CSV file.
+
+**Task Description:**
+
+1. **Load XML Data:**
+   - You are provided with an XML file named `weather_data.xml` containing weather information for several days. The XML structure includes elements like `<date>`, `<temperature>`, `<humidity>`, and `<precipitation>`.
+
+2. **Parse the XML File:**
+   - Write a Python script to load and parse the XML file using the `xml.etree.ElementTree` module.
+   - Extract the date, temperature, humidity, and precipitation for each day from the XML structure.
+
+3. **Store Data in CSV:**
+   - Store the extracted data in a CSV file named `parsed_weather_data.csv` with the following headers:
+     - `Date`
+     - `Temperature`
+     - `Humidity`
+     - `Precipitation`
+
+**Example XML Structure:**
+
+```xml
+<weather>
+    <day>
+        <date>2024-08-18</date>
+        <temperature>32.9</temperature>
+        <humidity>65</humidity>
+        <precipitation>0.0</precipitation>
+    </day>
+    <day>
+        <date>2024-08-19</date>
+        <temperature>30.5</temperature>
+        <humidity>70</humidity>
+        <precipitation>1.2</precipitation>
+    </day>
+    <!-- More day elements -->
+</weather>
+```
+
+**Expected Output:**
+- A CSV file named `parsed_weather_data.csv` with rows of weather data extracted from the XML file.
+
+
+## Task 6: Extracting Data Using Regular Expressions
+
+Create a Python script to extract weather data from a text file using regular expressions and store the data in a CSV file.
+
+**Task Description:**
+
+1. **Text Data Extraction:**
+   - You are provided with a text file named `weather_report.txt` containing daily weather summaries in the following format:
+     ```
+     Date: 2024-08-18, Max Temp: 32.9°C, Min Temp: 22.5°C, Humidity: 65%, Precipitation: 0.0mm
+     Date: 2024-08-19, Max Temp: 30.5°C, Min Temp: 21.8°C, Humidity: 70%, Precipitation: 1.2mm
+     ```
+   
+2. **Extract Data Using Regular Expressions:**
+   - Write a Python script to extract the date, maximum temperature, minimum temperature, humidity, and precipitation from each line using regular expressions.
+   - Ensure that the script can handle any issues related to text encoding, such as non-ASCII characters, by cleaning the data before extraction.
+
+3. **Store Extracted Data in CSV:**
+   - Store the extracted data in a CSV file named `extracted_weather_data.csv` with the following headers:
+     - `Date`
+     - `Max Temperature`
+     - `Min Temperature`
+     - `Humidity`
+     - `Precipitation`
+
+**Expected Output:**
+- A CSV file named `extracted_weather_data.csv` with rows of weather data extracted from the text file.
+
+
+
 
 
 
